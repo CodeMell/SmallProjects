@@ -1,0 +1,94 @@
+<html>
+<head>
+<title></title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+<style type="text/css">
+
+body {
+	background-color: #454F8C;
+	font-family: arial;
+	color: #454F8C;
+	text-align: center;
+}
+
+#contentwrap {
+	background: #F4F5E7;
+	border: 8px #FF9E01 solid;
+	padding: 20px;
+	width: 700px;
+	margin: 20px auto 0px auto;
+	border-radius: 25px;
+}
+
+#heading {
+	font-size: 2.2em;
+	border-bottom: 6px #484452 double;
+	padding: 10px 0px 10px 0px;
+	margin-bottom: 10px;
+}
+
+#links {
+	text-align: center;
+}
+
+.weatherclass {
+	display: none;
+	margin-bottom: 20px;
+}
+</style>
+
+<script type="text/javascript">
+	$("document").ready(function(){
+		$(".linkclass").click(function(){
+			if(!$(this).is(":visible")){
+			var daynum = $(this).attr("id").substring(4);
+			$(".weatherclass").hide();
+			$("#div" + daynum).show();
+		}
+		});
+	});
+
+
+</script>
+
+</head>
+
+<body>
+
+<div id="contentwrap">
+
+	<div id="heading">Click on a Link to Show Weather</div>
+
+	<div id="links">
+		<div><a href="javascript:void(0);" class="linkclass" id="link1">Monday</a></div>
+		<div class="weatherclass" id="div1">Really hot, chance of rain</div>
+
+		<div><a href="javascript:void(0);" class="linkclass" id="link2">Tuesday</a></div>
+		<div class="weatherclass"  id="div2">Mild with a chance of snow</div>
+
+		<div><a href="javascript:void(0);" class="linkclass" id="link3">Wednesday</a></div>
+		<div class="weatherclass"  id="div3">Extremely cold, -90 degrees</div>
+
+		<div><a href="javascript:void(0);" class="linkclass" id="link4">Thursday</a></div>
+		<div class="weatherclass"  id="div4">Pleasant with a chance of hellfire</div>
+
+		<div><a href="javascript:void(0);" class="linkclass" id="link5">Friday</a></div>
+		<div class="weatherclass"  id="div5">Whatever, 60 feet of snow</div>
+
+
+	</div> <!-- ends div#links -->
+
+
+
+</div> <!-- ends div#contentwrap -->
+
+
+
+</body>
+
+</html>

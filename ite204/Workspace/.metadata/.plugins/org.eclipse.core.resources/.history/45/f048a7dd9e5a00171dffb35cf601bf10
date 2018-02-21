@@ -1,0 +1,26 @@
+
+public abstract class GeoFig {
+	
+	private String color;
+	
+	public GeoFig(String color){
+		this.color = color;
+	}
+	
+	public GeoFig(){
+		this("plaid");
+	}
+	
+	public String getColor(){
+		return this.color;
+	}
+	
+	public abstract double findArea();
+	
+	public abstract double findPerim();
+	
+	public String toString(){
+		return "\nDetails about the figure:\nColor: " + this.color + "\nArea: " + this.findArea();
+	}
+	
+}

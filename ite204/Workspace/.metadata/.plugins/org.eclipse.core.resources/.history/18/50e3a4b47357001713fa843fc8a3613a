@@ -1,0 +1,11 @@
+
+public class TestGeoFig {
+
+	public static void main(String[] args) {
+		GeoFig c1 = new Circle("red", 6.5);
+		GeoFig r1 = new Rectangle("purple", 2.3, 4.5);
+		GeoFig c2 = new Circle("green", 12.3)
+
+	}
+
+}

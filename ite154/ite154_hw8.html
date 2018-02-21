@@ -1,0 +1,104 @@
+<html>
+<head>
+<title></title>
+
+<script type="text/javascript">
+
+function submitNums(){
+	var startnum = parseInt(document.getElementById("startnum").value);
+	var endnum = parseInt(document.getElementById("endnum").value);
+	var msg = "<table width = '100%'>";
+	
+	for(var i = startnum; i <= endnum; i++){
+		if(((i % 3) == 0) && ((i % 5) == 0)){
+			msg += "<tr><td>" + i + " BLAMMO</td></tr>";
+		}else if((i % 5) == 0){
+			msg += "<td>" + i + " BUZZ</td>";
+		}else if((i % 3) == 0){
+			msg += "<tr><td>" + i + " FIZZ</td></tr>";
+		}else{
+			msg += "<tr><td>" + i + "</td></tr>";
+		}
+	}
+	msg += "</table>"
+	
+	document.getElementById("output").innerHTML = msg;
+}
+
+</script>
+
+<style type="text/css">
+
+body {
+	background-image: url("https://s-media-cache-ak0.pinimg.com/originals/8b/4f/5f/8b4f5f35d42375f15853714da2a735bd.gif");
+	font-family: arial;
+	color: #454F8C;
+}
+
+#contentwrap {
+	background: #F4F5E7;
+	border: 8px #FF9E01 solid;
+	padding: 20px;
+	width: 600px;
+	margin: 20px auto 0px auto;
+	border-radius: 25px;
+	text-align: center;
+}
+
+#heading {
+	font-size: 1.8em;
+	border-bottom: 6px #484452 double;
+	padding: 10px 0px 10px 0px;
+}
+
+.formtext {
+	padding: 5px 0px 0px 0px;
+	font-weight: bold;
+}
+
+.formfield {
+	border: 2px black solid;
+	padding: 2px;
+	font-weight: bold;
+}
+
+table{
+	text-align : center;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="contentwrap">
+
+	<div id="heading">Going Loopy with Loops!!!</div>
+	<p />
+
+	<form>
+
+		<div class="formtext">Enter starting number</div>
+		<input type="text" class="formfield" id="startnum" size="40"><p>
+		
+		<div class="formtext">Enter ending number</div>
+		<input type="text" class="formfield" id="endnum" size="40"><p>
+
+		<input type="button" value="Show me the nums" onClick="submitNums()">
+
+	</form>
+
+	<div id="output" style="margin-top:10px;"></div>
+
+</div> <!-- ends div#contentwrap -->
+
+</body>
+</html>
+
+
+
+
+
+
+
+

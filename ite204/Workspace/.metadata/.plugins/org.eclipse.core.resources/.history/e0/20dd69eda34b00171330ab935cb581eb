@@ -1,0 +1,21 @@
+package day06;
+import javax.swing.*;
+public class ATMachine {
+
+	public static void main(String[] args) {
+		
+		String acctnum = JOptionPane.showInputDialog("Enter Account Number:");
+		double userbal = Double.parseDouble(JOptionPane.showInputDialog("Enter Starting Balance:"));
+
+		BankAccount useracct = new BankAccount(acctnum, userbal);
+		
+		String userchoice = showMenu();
+		
+	}
+	
+	public static String showMenu(){
+		
+		JOptionPane.showInputDialog("Please select an option\n\n(d)eposit\n(w)ithdraw\n(v)iew balance\n(q)uit\n\n");
+	}
+
+}

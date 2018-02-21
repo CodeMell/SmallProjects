@@ -1,0 +1,41 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class ButtonDemo extends JFrame {
+	
+	JButton incbutton, decbutton;
+	JLabel numlabel;
+	int number = 0;
+	
+	public static void main(String[] args) {
+		
+		ButtonDemo myframe = new ButtonDemo();
+		myframe.setSize(275, 350);
+		myframe.setTitle("BUTTONS");
+		myframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		myframe.setLocationRelativeTo(null);
+		myframe.setResizable(true);
+		myframe.setVisible(true);
+	}
+	
+	public ButtonDemo(){
+		
+		Container c = this.getContentPane();
+		c.setLayout(new FlowLayout());
+		c.setBackground(Color.blue);
+		
+		JLabel title = new JLabel("Click a Button");
+		title.setForeground(Color.white);
+		title.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
+		c.add(title);
+		
+		incbutton = new JButton("Increment");
+		c.add(incbutton);
+		
+		decbutton = new JButton("Decrement");
+		c.add(decbutton);
+		
+		
+	}
+
+}

@@ -1,0 +1,129 @@
+<html>
+<head>
+<title></title>
+
+<script type="text/javascript">
+
+function calcPay(){
+	var name = document.getElementById("name").value;
+	var rate = parseFloat(document.getElementById("rate").value);
+	var hours = parseFloat(document.getElementById("hours").value);		
+	var totalPay
+	
+	if(hours >= 40){
+		var otHours = hours - 40;
+		totalPay = (otHours * rate * 1.5) + (40 * rate);
+	}
+	else{
+		totalPay = rate * hours;
+	}
+	
+	var msg = "<div>Employee name is " + name + "</div><div></div>";
+	msg = msg + "<div>Total pay is $" + totalPay + "</div>";
+	
+	document.getElementById("output").innerHTML = msg;
+	}
+
+</script>
+
+
+
+<style type="text/css">
+
+body {
+	background: #000000;
+	font-family: arial;
+}
+
+#header {
+	font-size: 1.75em;
+	text-align: center;
+	color: red;
+	text-shadow: 2px 2px yellow;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+#heading {
+	font-size: 1.5em;
+	margin-bottom: 35px;
+	border-bottom: 4px red double;
+	padding-bottom: 5px;
+	color: darkgreen;
+}
+
+#formwrap {
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	background: lightyellow;
+	border: 6px darkred solid;
+	padding: 15px;
+	text-align: center;
+	box-shadow: 0px 0px 10px 10px red;
+}
+
+.formtext {
+	margin-top: 10px;
+}
+
+#button {
+	background: yellow;
+	color: darkgreen;
+	border: 2px darkgreen solid;
+	font-size: 1.25em;
+	cursor: pointer;
+}
+
+#button:hover {
+	background: purple;
+	color: white;
+}
+
+#results {
+	font-size: 1.5em;
+	margin-top: 20px;
+	color: maroon;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="header">Using JavaScript IF statements</div>
+
+<div id="formwrap">
+	
+	<div id="heading">Calculate Employee Pay</div>
+
+	<!-- form will go here -->
+	<form>
+	
+		<div class="formtext">Enter Employee name</div>
+		<input id = "name" type="text">
+		
+		<div class="formtext">Enter Employee hourly payrate</div>
+		<input id = "rate"type="text">
+		
+		<div class="formtext">Enter Employee hours worked</div>
+		<input id = "hours" type="text">		
+		
+		<div style="margin-top: 20px;">
+			<input type="button" value="Calculate Pay" id="button" onClick = "calcPay()" >
+		</div>
+	
+	</form>
+	
+	
+	<div id="output"></div>
+
+</div> <!-- closes formwrap div -->
+
+</body>
+</html>
+
+
+
+
+

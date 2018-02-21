@@ -1,0 +1,33 @@
+
+public class Money {
+	
+	private int dollars;
+	private int cents;
+	
+	public Money(int d, int c){
+		this.dollars = d;
+		this.cents = c;
+	}
+	
+	public Money(){
+		this.dollars = 0;
+		this.cents = 0;
+	}
+	
+	public int getDollars(){
+		return this.dollars;
+	}
+	
+	public int getCents(){
+		return this.cents;
+	}
+	
+	public String toString(){
+		return "$" + this.dollars + "." + this.cents;
+	}
+	
+
+	
+	
+	
+}

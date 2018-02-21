@@ -1,0 +1,83 @@
+<html>
+<head>
+<title></title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+<style type="text/css">
+
+body {
+	background: #CCCC99;
+	color: black;
+	font-family: arial;
+	text-align: center;
+}
+
+#header {
+	margin: 25px 150px 0px 150px;
+	color: white;
+	background: #003366;
+	font-weight: bold;
+	font-size: 1.45em;
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	padding: 20px 0px 20px 0px;
+}
+
+#contentwrap {
+	margin: 0px 150px 0px 150px;
+	height: 500px;
+	background: #FFFFFF;
+	border: 2px solid #003366;
+	padding: 20px 0px 10px 0px;
+}
+
+#footer {
+	margin: 0px 150px 0px 150px;
+	background: #003366;
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+	padding: 30px 0px 30px 0px;
+}
+
+</style>
+
+<script type="text/javascript">
+$("document").ready(function(){
+	$(".selection").click(function(){
+		var msg = "http://newton.ncc.edu/gansonj/ite254/img/";
+		msg += $(this).attr("id") + ".jpg";
+
+		$("#output").hide();
+		$("#output").attr("src", msg);
+		$("output").show("blink", 200);
+	});
+});
+
+</script>
+
+</head>
+<body>
+
+<div id="header">
+Click link to display picture
+</div>
+
+<div id="contentwrap">
+	<a class="selection" id="xboxone" href="javascript: void(0);">Show Xbox One</a><p/>
+
+	<a class="selection" id="ps4" href="javascript: void(0);">Show PS4</a><p/>
+
+	<a class="selection" id="wiiu" href="javascript: void(0);">Show Wii U</a><p/>
+
+	<img src="" id ="output">
+
+</div> <!-- ends div#contentwrap -->
+
+<div id="footer"></div>
+
+</body>
+</html>

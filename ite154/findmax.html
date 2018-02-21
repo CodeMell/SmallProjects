@@ -1,0 +1,118 @@
+<html>
+<head>
+<title></title>
+
+<script type="text/javascript">
+
+function findMax(){
+
+	var num1 = parseFloat(document.getElementById("num1").value);
+	var num2 = parseFloat(document.getElementById("num2").value);
+	var num3 = parseFloat(document.getElementById("num3").value);
+	var max
+
+	if(num1 >= num2 && num1 >= num3){
+		max = num1;
+	}
+	else if(num2 >= num1 && num2 >= num3){
+		max = num2;
+	}
+	else if(num3 >= num1 && num3 >= num2){
+		max = num3;
+	}
+	else{
+		document.getElementById("output").innerHTML = "<div>There is no largest number.</div>";
+	}
+
+	document.getElementById("output").innerHTML = "<div>The maximum value is " + max + "</div>";
+
+
+
+	/*
+	if(num1 > num2 && num1 > num3){
+		document.getElementById("output").innerHTML = "<div>number one (" + num1 + ") is the largest</div>";
+	}
+	else if(num2 > num1 && num2 > num3){
+		document.getElementById("output").innerHTML = "<div>number two (" + num2 + ") is the largest</div>";
+	}
+	else if(num3 > num1 && num3 > num2){
+		document.getElementById("output").innerHTML = "<div>number three (" + num3 + ") is the largest</div>";
+	}
+	else{
+		document.getElementById("output").innerHTML = "<div>There is no largest number.</div>";
+	}
+	*/
+
+}
+
+</script>
+
+<style type="text/css">
+
+body {
+	background: maroon;
+	color: darkblue;
+	font-family: arial;
+}
+
+#contentwrap {
+	width: 700px;
+	margin: 40px auto 0px auto;
+	background: #FFFFFF;
+	text-align: center;
+	border: 6px darkblue solid;
+	border-radius: 10px;
+	padding: 40px;
+}
+
+#header {
+	text-align: center;
+	font-size: 1.5em;
+	text-shadow: maroon 3px 3px;
+	margin-bottom: 18px;
+	color: orange;
+}
+
+.fstyle {
+	background: orange;
+	font-family: comic sans ms;
+	border: 6px blue double;
+}
+
+.formtext {
+	margin-top: 8px;
+}
+
+</style>
+
+</head>
+
+<body onLoad = "document.getElementById('num1').focus">
+
+<div id="contentwrap">
+
+	<div id="header">Find the maximum of 3 numbers</div>
+
+	<form>
+
+		<div class="formtext">Enter num 1</div>
+		<div><input type="text" id="num1" class="fstyle" /></div>
+
+		<div class="formtext">Enter num 2</div>
+		<div><input type="text" id="num2" class="fstyle" /></div>
+
+		<div class="formtext">Enter num 3</div>
+		<div><input type="text" id="num3" class="fstyle" /></div>
+
+		<div style="margin-top:10px;">
+			<input type="button" value="Find Max" onClick = "findMax()" />
+		</div>
+
+	</form>
+
+	<div id="output"></div>
+
+</div> <!-- ends div#contentwrap -->
+
+</body>
+</html>

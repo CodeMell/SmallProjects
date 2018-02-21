@@ -1,0 +1,171 @@
+<html>
+<head>
+<title>Javascript Loan Calculator</title>
+
+<script type = "text/javascript">
+
+function calcLoan(){
+	var loanamt = parseFloat(document.getElementById("loanamt").value);
+	var startint = parseFloat(document.getElementById("startint").value);
+	var endint = parseFloat(document.getElementById("endint").value);
+	var years = parseFloat(document.getElementById("years").value);
+	var monthlyPayment;
+	var totalPayment;
+	var red = 1;
+	
+	var msg = "<div>Loan Amount: $" + loanamt.toFixed(2) + "</div><div>Number of Years: " + years.toFixed(2) + "</div><div>Starting Interest rate: " + startint.toFixed(2) + "%</div><div>Ending Interest rate: " + endint.toFixed(2) + "%</div>";
+	var tbl = "<table id = 'loantable'><tr><td>Interest Rate</td><td>Monthly Payment</td><td>Total Payment</td></tr>";
+	
+	for(var i = startint; i <= endint; i += .25){
+		monthlyPayment = ((loanamt * (i/1200)) * (Math.pow((1 + (i/1200)),(years * 12)))) / ((Math.pow((1 + (i/1200)),(years * 12))) - 1);
+		totalPayment = (monthlyPayment * (years * 12));
+		
+		if((red % 2) == 0){
+			tbl += "<tr class = 'oddrow'><td>" + i.toFixed(2) + "%</td><td>$" + monthlyPayment.toFixed(2) + "</td><td>$" + totalPayment.toFixed(2) + "</td></tr>";
+		}else{
+			tbl += "<tr class = 'evenrow'><td>" + i.toFixed(2) + "%</td><td>$" + monthlyPayment.toFixed(2) + "</td><td>$" + totalPayment.toFixed(2) + "</td></tr>";
+		}
+		red++
+	}
+	tbl += "</table>";
+	
+	document.getElementById("outputdiv").innerHTML = msg;
+	document.getElementById("tablediv").innerHTML = tbl;
+}
+
+</script>
+<style type="text/css">
+
+body{
+	text-align: center;
+	background: black;
+	font-family: arial;
+	padding: 10px;
+	margin-left:5%;
+	margin-right:5%
+}
+
+#header{
+	color: red;
+	text-shadow: 3px 3px yellow;
+	font-size: 2em;
+	margin-bottom: 15px;
+}
+
+#formwrap{
+	background:lightyellow;
+	border: 6px solid red;
+	color: green;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+#contentwrap{
+	background: pink;
+	border: 3px solid white;
+	padding: 10px;
+	color: darkred;
+}
+
+#buttonstyle{
+	background: blue;
+	color: white;
+	border: 1px solid red;
+	font-weight: bold;
+	border-radius: 10px;
+	padding: 5px;
+	font-size: 1em;
+}
+
+.formtext {
+	margin-top: 9px;
+}
+
+.fieldstyle{
+	background: lightblue;
+	color: darkred;
+	border: 3px darkblue double;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+table#loantable {
+	border: 6px darkblue solid;
+	width : 100%;
+	background:lightyellow;
+	color: darkred;
+
+
+}
+
+#tableheader {
+	background-color: lightyellow;
+	color: darkred;
+}
+
+.evenrow {
+	background-color: #B1BDCD;
+	color: #660F57;
+}
+
+.oddrow {
+	background-color: #DED5B3;
+	color: #111111;
+}
+
+#outputdiv {
+	padding:20px 0px 0px 20px;
+	color:darkred;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="formwrap">
+
+	<div id="header">Javascript Loan Calculator</div>
+	
+		<form>
+			<div class="formtext">Enter initial loan amount: </div>
+			<input type="text" class="fieldstyle" size="20" id = "loanamt" />
+ 
+			<div class="formtext">Enter starting interest rate: </div>
+			<input type="text" class="fieldstyle" size="20" id = "startint" />
+ 
+			<div class="formtext">Enter ending interest rate: </div>
+			<input type="text" class="fieldstyle" size="20" id = "endint" />
+
+			<div class="formtext">Enter how many years to borrow: </div>
+			<input type="text" class="fieldstyle" size="20" id = "years" />
+			
+ 			<div style="margin-top:13px;">
+				<input type="button" id="buttonstyle"
+					value="Compute Monthly Payments"
+					onClick = "calcLoan()"/>
+			</div>
+		</form>
+
+</div> <!-- ends div#formwrap -->
+
+<div id="contentwrap">
+	
+	<table border="0" width="100%">
+	<tr>
+	
+		<td valign="top" width="30%">
+			<div id="outputdiv"></div>
+		</td>
+		
+		<td>
+			<div id="tablediv"></div>
+		</td>
+		
+	</tr>
+	</table>
+	
+</div> <!-- ends div#contentwrap -->
+
+</body>
+</html>

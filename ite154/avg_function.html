@@ -1,0 +1,73 @@
+<html>
+<head>
+<title></title>
+
+
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+<style type="text/css">
+
+body {
+	background: black;
+	font-family: arial;
+	color: darkgreen;
+}	
+
+#header {
+	font-size: 2.5em;
+	text-shadow: 2px 2px yellow;
+	margin-bottom: 10px;
+	color: red;
+	text-align: center;
+}
+
+#formwrap {
+	border: 6px red solid;
+	margin-left: 20%;
+	margin-right: 20%;
+	background: lightyellow;
+	text-align: center;
+	padding: 20px;
+}
+
+.formtext {
+	margin-top: 10px;
+	font-size: 1.2em;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<div id="header">Grade Calculator</div>
+
+<div id="formwrap">
+	
+	<form>
+	
+		<div class="formtext">Enter grade 1</div>
+		<div><input type="text" id="grade1" size="20"></div>
+		
+		<div class="formtext">Enter grade 2</div>
+		<div><input type="text" id="grade2" size="20"></div>
+		
+		<div style="margin-top:15px;">
+			<input type="button" value="Calculate Grade" onClick="calcGrade()" />
+		</div>
+		
+	</form>
+	
+	<div id="output"></div>
+	
+</div>
+
+</body>
+</html>

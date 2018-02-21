@@ -1,0 +1,22 @@
+
+public class MasterCrook extends CreditCard{
+	
+	private Money serviceFee;
+	
+	public MasterCrook(String idnum){
+		super(idnum);
+		this.serviceFee = new Money("$5.00");
+	}
+	
+	public MasterCrook(){
+		this.serviceFee = new Money("$5.00");
+	}
+	
+	public Money getServiceFee(){
+		return this.serviceFee;
+	}
+	
+	public void chargeCard(Money chargeamt){
+		this.setbalance(this.getBalance().addMoney(chargeamt.addMoney(this.serviceFee)));
+	}
+}

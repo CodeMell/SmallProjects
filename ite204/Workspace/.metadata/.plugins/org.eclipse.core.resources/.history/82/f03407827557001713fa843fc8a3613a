@@ -1,0 +1,14 @@
+
+public class DishonestExpress extends CreditCard{
+	
+	private int interest;
+	
+	public DishonestExpress(String idnum, int interest){
+		super(idnum);
+		this.interest = interest;
+	}
+	
+	public DishonestExpress(){
+		this.interest = 2;
+	}
+}

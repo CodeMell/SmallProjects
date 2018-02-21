@@ -1,0 +1,80 @@
+<html>
+<head>
+
+<title>ITE254 Exam #3</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#btn").click(function(){
+		var user = $("#username").val();
+		var pass = $("#password").val();
+
+		$.ajax({
+			url: "login_ajax.php",
+			type: "post",
+			data: "un=" + user + "&pw=" + pass,
+			success: function(msg){
+				if(msg == "yes"){
+					$("#results").hide();
+					$("#results").css("color", "green");
+					$("#results").html("Successful Login");
+					$("#results").show();
+				}else if(msg == "no"){
+					$("#results").hide();
+					$("#results").css("color", "red");
+					$("#results").html("Wrong Username/Password");
+					$("#results").show();
+				}
+			}
+		});
+	});
+});
+
+
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="http://newton.ncc.edu/gansonj/ite254/styles/exam_styles.css">
+
+</head>
+<body>
+
+<div id="contentwrap">
+
+	<div id="formwrap">
+
+		<div id="titlewrap">
+			Please login<p />
+			USERNAME: final<br />
+			PASSWORD: exam<br />
+		</div>
+
+		<form id="loginform" action="javascript:void(0);">
+
+			Enter Username<br />
+			<input type="text" size="20" id="username">
+			<p />
+
+			Enter Password<br />
+			<input type="text" size="20" id="password">
+			<p />
+
+			<input type="submit" value="Login" id="btn">
+
+		</form>
+
+		<div id="resultswrap">
+
+			<div id="results"></div>
+
+		</div>
+
+	</div> <!-- closes formwrap div -->
+
+</div> <!-- closes pagewrap div -->
+
+</body>
+</html>

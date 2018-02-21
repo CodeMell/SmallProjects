@@ -1,0 +1,145 @@
+<html>
+<head>
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+<style type="text/css">
+
+body {
+	background-color: #F3EFE0;
+	font-family: arial;
+	color: #217C7E;
+}
+#contentwrap {
+	border: 8px #9A3334 solid;
+	padding: 20px;
+	width: 600px;
+	margin: 20px auto 0px auto;
+	border-radius: 25px;
+	text-align: center;
+	background: white;
+}
+
+#heading {
+	font-size: 2.2em;
+	border-bottom: 6px #217C7E double;
+	padding: 10px 0px 10px 0px;
+	color: darkred;
+}
+
+#formdiv {
+	text-align: center;
+	padding-top: 25px;
+}
+
+.formtext {
+	margin-top: 10px;
+}
+
+#endnum {
+	background-color: lightgray;
+	border: 2px darkred solid;
+}
+
+#result {
+	font-size: 1em;
+	color: #FF0000;
+}
+
+</style>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$("#payform").submit(function(){
+		var empname = $("#empname").val();
+		var payrate = parseFloat($("#payrate").val());
+		var hours = parseInt($("#hours").val());
+
+		var totalpay = payrate * hours;
+
+		var msg = "<div>Employee name is " + empname + "</div>";
+		msg += "<div>payrate is $" + payrate + "</div>";
+		msg += "<div> hours worked is " + hours + "</div>";
+		msg += "<div>total pay is: $" + totalpay.toFixed(2) +"</div>";
+
+		$("#output").hide();
+		$("#output").html(msg);
+		$("#output").show("fade");
+	});
+	$("#clearbtn").click(function(){
+		$(".formfield").val(null);
+		$("#output").html(null);
+	});
+	$("#styleform").submit(function(){
+		var txtColor = $("#txtColor").val();
+		var bkgColor = $("#bkgColor").val();
+		var font = $("#txtFont").val();
+		$("body").css("font-family", font);
+		$("body").css("background-color", bkgColor);
+		$(".formtext").css("color", txtColor);
+	});
+});
+
+</script>
+
+</head>
+
+<body>
+
+<div id="contentwrap">
+
+	<form id="styleform" action="javascript: void(0);">
+		<div class="formtext">Enter Text Color</div>
+		<input type="text" class="formfield" id="txtColor">
+
+		<div class="formtext">Enter Background Color</div>
+		<input type="text" class="formfield" id="bkgColor">
+
+		<div class="formtext">Select Text Font</div>
+		<select id="txtFont">
+			<option value="times new roman">Times New Roman</option>
+			<option value="comic sans ms">Comic Sans</option>
+			<option value="verdana">Verdana</option>
+		</select>
+
+		<div style="margin-top: 10px;">
+			<input type="submit" value="Change Styles">
+		</div>
+	</form>
+
+
+	<div id="heading">Using jQuery with a form</div>
+
+		<div id="payformdiv">
+
+			<form action="javascript:void(0);" id="payform">
+				<div class="formtext">Enter Name</div>
+				<input class="formfield" type="text" id="empname">
+
+				<div class="formtext">Enter Payrate</div>
+				<input class="formfield" type="text" id="payrate">
+
+				<div class="formtext">Enter Hours</div>
+				<input class="formfield" type="text" id="hours">
+
+				<div style="margin-top: 20px;">
+					<input type="submit" value="Calculate Pay">
+					<input type="button" value="Clear All" id="clearbtn">
+				</div>
+
+			</form>
+
+		</div> <!-- ends div#payformdiv -->
+
+		<div id="output" style="display:none;"></div>
+
+	</div>
+
+</div> <!-- ends div#contentwrap -->
+
+</body>
+</html>

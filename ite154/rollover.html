@@ -1,0 +1,70 @@
+<html>
+<head>
+<title></title>
+
+<script type="text/javascript" src="functionlib.js"></script>
+
+<style type="text/css">
+
+body {
+	background: lightyellow;
+	font-family: arial;
+}
+
+#allwrap {
+	border: 8px black solid;
+	background: white;
+	background-image: url("http://newton.ncc.edu/gansonj/ite154/img/pupbg.jpg");
+	width: 700px;
+	margin: 20px auto 0px auto;
+	padding: 30px 50px 30px 50px;
+}
+
+#pagewrap {
+	border: 8px darkblue solid;
+	background: lightblue;
+	padding: 20px;
+}
+
+#heading {
+	background: darkblue;
+	color: white;
+	text-align: center;
+	border: 5px red double;
+	font-size: 1.75em;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+#contentwrap {
+	background: white;
+	border: 5px red double;
+	margin: 20px 40px 0px 40px;
+	padding: 15px;
+	text-align: center;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="allwrap">
+	<div id="pagewrap">
+
+		<div id="heading">Mouse Rollover Example</div>
+		
+		<div id="contentwrap" >
+			
+			<img src = "http://newton.ncc.edu/gansonj/ite154/img/puppy.jpg"
+			id = "pic"
+			onmouseover="setImage('pic','http://newton.ncc.edu/gansonj/ite154/img/kitten.jpg')" 
+			onmouseout="setImage('pic','http://newton.ncc.edu/gansonj/ite154/img/puppy.jpg')">
+
+		</div> <!-- closes div#contentwrap -->
+		
+	</div> <!-- closes div#pagewrap -->
+</div> <!-- closes div#allwrap -->
+
+</body>
+</html>

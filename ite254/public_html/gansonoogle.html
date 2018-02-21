@@ -1,0 +1,121 @@
+<html>
+<head>
+<title></title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+
+function bool isSpaces(string s){
+	var sa = s.split("");
+	var success = true;
+	for(var i; i > sa.length; i++){
+		if(sa[i] != " "){
+			success = false;
+		}
+	}
+	return success;
+}
+
+$("document").ready( function() {
+	$("#gamename").keyup(function(){
+		var gamename = $("#gamename").val();
+
+		if(!isSpaces(gamename)){
+			$("#output").html("");
+			return;
+		}
+		$.ajax({
+			url: "showgames_ajax.php",
+			type: "POST",
+			data: "gamename=" + gamename,
+			success: function(msg){
+				if(msg != "error"){
+					$("#output").hide();
+					$("#output").html(msg);
+					$("#output").show("fade");
+				}else{
+					$("#output").hide();
+					$("#output").html("Sorry, no matches found, try another search.");
+					$("#output").show("pulsate");
+				}
+			}
+		});
+	});
+} ); //ends document.ready
+
+</script>
+
+
+<style type="text/css">
+
+body {
+	background: #FFFFFF;
+	font-family: arial;
+}
+
+#contentwrap {
+	width: 600px;
+	margin: 75px auto 0px auto;
+	background: #FFFFFF;
+}
+
+#imgwrap, #formwrap {
+	text-align: center;
+	margin-bottom: 8px;
+}
+
+#gamename {
+	width: 500px;
+	padding: 6px;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+#output {
+	margin-top: 20px;
+	padding-left: 55px;
+	font-size: 1.25em;
+}
+
+.goodclass {
+
+	color: blue;
+	text-decoration: underline;
+
+}
+
+.errorclass {
+	color: red;
+	text-decoration: none;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="contentwrap">
+
+	<div id="imgwrap">
+		<img src="http://newton.ncc.edu/gansonj/ite254/img/gansonoogle.png" />
+	</div>
+
+	<div id="formwrap">
+
+		<!-- form goes here -->
+		<form action="javascript:void(0);">
+
+			<input type="text" id="gamename" />
+
+		</form>
+
+	</div>
+
+	<div id="output"></div>
+
+</div> <!-- ends div#contentwrap -->
+
+</body>
+</html>

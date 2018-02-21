@@ -1,0 +1,113 @@
+<html>
+<head>
+<title></title>
+
+<script type="text/javascript">
+
+function sayHello(){
+	var name = document.getElementById("username").value;
+
+	var msg = "Hello " + name + " how ya doin?";
+	
+	document.getElementById("output").innerHTML = msg;
+	
+}
+
+</script>
+
+<style type="text/css">
+
+body {
+	background: tan;
+	color: darkred;
+	text-align: center;
+	font-family: arial;
+}
+
+#contentwrap {
+	background-color: white;
+	border: 8px black double;
+	width: 500px;
+	margin: 40px auto 0px auto;
+	padding: 20px;
+}
+
+#header {
+	font-size: 1.25em;
+	margin-bottom: 20px;
+}
+
+#firstname {
+	background: lightblue;
+	color: maroon;
+	border: 2px darkgreen solid;
+	padding: 3px;
+}
+
+#formtext {
+	margin-top: 15px;
+}
+
+#mybutt {
+	background-color: maroon;
+	color: yellow;
+	border: 2px #000000 solid;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+#mybutt:hover {
+	background-color: yellow;
+	color: maroon;
+	border: 2px #000000 solid;
+	cursor: pointer;
+}
+
+#output {
+	margin-top: 20px;
+	font-size: 1.25em;
+	color: darkblue;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="contentwrap">
+
+	<div id="header">
+		Intro to JavaScript.<br />
+		Copy text from form, place back on page
+	</div>
+
+	<!-- form is here -->
+	<form>
+
+		<div id="formtext">Enter first name</div>
+		<div>
+			<input type="text" size="30" id = "username" />
+		</div>
+		
+		<div style="margin-top:15px;">
+			<input type="button" id="button" value="Process Form" onClick = "sayHello()"/>
+		</div>
+		
+	</form>
+	<div id = "output">	</div>
+
+
+</div> <!-- closes div#contentwrap -->
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

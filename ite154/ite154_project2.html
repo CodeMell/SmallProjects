@@ -1,0 +1,183 @@
+<html>
+<head>
+<title>ITE154 BMR Calculator</title>
+
+<script>
+
+function calcBMR(){
+
+	var weight = document.getElementById("weight").value;
+	var height = document.getElementById("height").value;
+	var age = document.getElementById("age").value;
+	var activity = document.getElementById("activity").value;
+
+	var fbmr = (655 + (4.3 * weight) + (4.7 * height) - (4.7 * age))
+	var mbmr = (66 + (6.3 * weight) + (12.9 * height) - (6.8 * age))
+
+	if(activity == "level1"){
+		mbmr = mbmr + (mbmr * .2);
+		fbmr = fbmr + (fbmr * .2);
+	}
+	if(activity == "level2"){
+		mbmr = mbmr + (mbmr * .37);
+		fbmr = fbmr + (fbmr * .37);
+	}
+	if(activity == "level3"){
+		mbmr = mbmr + (mbmr * .55);
+		fbmr = fbmr + (fbmr * .55);
+	}
+	if(activity == "level4"){
+		mbmr = mbmr + (mbmr * .7)
+		fbmr = fbmr + (fbmr * .7)
+	}
+
+	document.getElementById("output").innerHTML = "<div>To maintain your current weight...</div><div>If you are female, you must eat " + fbmr.toFixed(0) + " calories</div><div>If you are male, you must eat " + mbmr.toFixed(0) + " calories</div><div><br></div><div>More calories in a day will result in weight gain,</div><div>less calories will result in weight loss"
+}
+
+</script>
+
+
+
+<style type="text/css">
+
+body {
+	background: #FF9933;
+	color: black;
+	font-family: comic sans ms;
+}
+
+#pagewrap {
+	border: 6px blue solid;
+	padding: 30px;
+	background-image: url("http://newton.ncc.edu/gansonj/ite154/img/veggies.jpg");
+	width: 700px;
+	margin: 20px auto 0px auto;
+	border: 6px #81C6DD solid;
+	border-radius: 25px;
+}
+
+#contentwrap {
+	background: #99CCCC;
+	border: 6px #9E3B33 solid;
+	border-radius: 25px;
+}
+
+#header {
+	margin: 20px 20px 20px 20px; 
+	text-align: center;
+	color: #ffffff;
+	background: #003399;
+	font-weight: bold;
+	font-size: 2em;
+	border-radius: 25px;
+	padding: 10px 0px 10px 0px;
+	
+}
+
+#formwrap {
+	margin: 20px 20px 20px 20px; 
+	height: 450px;
+	background: #CCCCCC;
+	border: 5px solid #9E3B33;
+	border-radius: 25px;
+	padding: 10px;
+	background-image: url("http://newton.ncc.edu/gansonj/ite154/img/broccoli.png");
+	background-repeat: no-repeat;
+	background-position:right center;
+}
+
+.formtext {
+	color: black;
+	margin-top: 8px;
+}
+
+.formfield {
+	padding: 5px;
+	background: #99CCCC;
+	color: black;
+	border: 2px #003399 solid;
+	border-radius: 25px;
+}
+
+#calcbutton {
+	background: #E48743;
+	color: white;
+	cursor: pointer;
+	padding: 5px 0px 5px 0px;
+	border: 3px solid #90CA77;
+	width: 150px;
+}
+
+#calcbutton:hover {
+	background: #90CA77;
+	color: #000000;
+	border: 3px solid #E48743;	
+}
+
+#footer {
+	margin: 20px 20px 20px 20px; 
+	text-align: center;
+	color: white;
+	background: #003399;
+	font-weight: bold;
+	font-size: 1.45em;
+	border-radius: 25px;
+	padding: 20px 0px 20px 0px;
+}
+
+#results {
+	color: #003399;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="pagewrap">
+
+	<div id="contentwrap">
+	
+		<div id="header">
+			The Nifty ITE154 Calorie Counter
+		</div>
+	
+		<div id="formwrap">
+	
+			<form>	
+				<div class="formtext">Enter your weight (pounds)</div>
+				<input type="text" class="formfield" id="weight" size="40" value="150" />
+	
+				<div class="formtext">Enter your height (inches)</div>
+				<input type="text" class="formfield" id="height" size="40" value="66" />
+				
+				<div class="formtext">Enter your age (years)</div>
+				<input type="text" class="formfield" id="age" size="40" value="44" />
+		
+				<div class="formtext">Select your activity level (1-4)</div>
+				<select id="activity" class="formfield">
+					<option value="level1">Level 1 - Sedentary - little or no exercise</option>
+					<option value="level2">Level 2 - Lightly Active - exercise 1-3 times/week</option>
+					<option value="level3">Level 3 - Moderately Active - exercise 3-5 times/week</option>
+					<option value="level4">Level 4 - Very Active - exercise 6-7 times/week</option>
+				</select>
+		
+				<div style="margin-top:20px;">
+					<input type="button" value="Calculate Calories" id="calcbutton" onClick = "calcBMR()" />
+				</div>
+			</form>	
+
+			<div id="output"></div>
+
+		</div> <!-- ends div#formwrap -->
+	
+		<div id="footer">
+		Thanks for visiting!
+		</div>
+
+	</div> <!-- ends div#contentwrap -->
+
+</div> <!-- ends div#pagerwrap -->
+
+</body>
+</html>

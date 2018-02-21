@@ -1,0 +1,103 @@
+<html>
+<head>
+<title></title>
+
+<script type="text/javascript">
+
+function testDivisible(){
+	var usernum = parseInt(document.getElementById("usernum").value);
+	var random
+	var msg = "<div>You entered " + usernum + "</div>";
+	
+	for(var i = 0; i < 10; i++){
+		random = Math.floor((Math.random() * 100)) + 1;
+		if(random % usernum == 0){
+			msg += "<div class = 'divisible'>" + random + " is divisible by " + usernum + "</div>";
+		}else{
+			msg += "<div class = 'indivisible'>" + random + " is NOT divisible by " + usernum + "</div>";
+		}
+	}
+	
+	document.getElementById("output").innerHTML = msg;
+}
+
+</script>
+
+<style type="text/css">
+
+body {
+	background-color: #7A3E48;
+	font-family: arial;
+	text-align: center;
+}
+
+#contentwrap {
+	margin: 25px auto 0px auto;
+	border: 10px #E18942 solid;
+	width: 700px;
+	height: 450px;
+	border-radius: 25px;
+	background-color: #EECD86;
+	padding: 30px;
+}
+
+#title {
+	font-size: 2.5em;
+	color: #7A3E48;
+	border-bottom: 10px #3D3242 double;
+	padding-bottom: 5px;
+}
+
+#formtext {
+	color: #7A3E48;
+	font-size: 1.5em;
+	margin-top: 20px;
+	padding: 5px;
+}
+
+#button {
+	padding: 2px;
+	width: 200px;
+	border-radius: 25px;
+	font-weight: bold;
+}
+
+#output {
+	font-size: 1.25em;
+	color: #7A3E48;
+}
+
+.divisible{
+	color : green;
+}
+
+.indivisible{
+	color : red;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="contentwrap">
+
+	<div id="title">Loop Practice</div>
+
+	<form>
+
+		<div id="formtext">Enter a number</div>
+		<input type="text" id="usernum" size="20" />
+
+		<div style="margin-top:20px;">
+			<input type="button" value="Go For It!" onClick="testDivisible()" id="button" />
+		</div>
+
+	</form>
+
+	<div id="output" style="margin-top:10px;"></div>
+
+</div> <!-- ends div#contentwrap -->
+
+</body>
+</html>

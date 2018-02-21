@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>Bowling Calculator</title>
+
+<script type = "text/javascript">
+
+function calcScore(){
+	var b1name = document.getElementById("b1name").value;
+	var b1s1 = parseFloat(document.getElementById("b1s1").value);
+	var b1s2 = parseFloat(document.getElementById("b1s2").value);
+	var b2name = document.getElementById("b2name").value;
+	var b2s1 = parseFloat(document.getElementById("b2s1").value);
+	var b2s2 = parseFloat(document.getElementById("b2s2").value);
+	
+	var b1avg = ((b1s1 + b1s2) / 2);
+	var b2avg = ((b2s1 + b2s2) / 2);
+	var b1avground = b1avg.toFixed(2);
+	var b2avground = b2avg.toFixed(2);
+	
+	var msg = "<div>" + b1name + "'s average score is " + b1avg + "</div><div>" + b2name + "'s average score is " + b2avg + "</div>"
+	
+	if (b1avg > b2avg){
+		msg = "<div>" + msg + b1name + " has the higher average</div>"
+	}
+	else if(b2avg > b1avg){
+		msg = "<div>" + msg + b2name + " has the higher average</div>"
+	}
+	else{
+		msg = msg + "<div>The average scores are the same</div>"
+	}
+	document.getElementById("output").innerHTML = msg;
+}
+
+</script>
+
+
+<style type="text/css">
+body {
+	background-color: lightyellow;
+	font-family: verdana;
+	color: lightyellow;
+	text-align: center;
+}
+
+#heading {
+	color: maroon;
+	font-size: 2.2em;
+	text-align: center;
+}
+
+#pagewrap {
+	background-color: black;
+	border: 6px yellow double;
+	padding: 20px;
+	border-radius: 15px;
+	width: 600px;
+	margin: 10px auto 0px auto;
+}
+
+#formwrap {
+	background-color: maroon;
+	border: 6px lightblue double;
+	padding: 20px 0px 20px 0px;
+	border-radius: 15px;
+}
+
+.formtext {
+	margin: 10px 0px 5px 0px;
+}
+
+.formfield {
+	background-color: lightyellow;
+	border: 5px gold double;
+	font-family: comic sans ms;
+	font-weight: bold;
+
+}
+</style>
+
+</head>
+<body>
+<div id="heading">Bowling Average Calculator</div>
+
+<div id="pagewrap">
+
+	<div id="formwrap">
+	
+		<form>
+			<div class="playerid">Bowler 1 Info</div>
+		
+			<div class="formtext">Enter Bowler 1 Name:
+			<input id = "b1name" type="text" class="formfield" ></div>
+		
+			<div class="formtext">Bowler 1 Score 1:
+			<input id = "b1s1"type="text" class="formfield" ></div>	
+		
+			<div class="formtext">Bowler 1 Score 2:
+			<input id = "b1s2" type="text" class="formfield" ></div>
+		
+	
+			<div class="playerid" style="margin-top:40px;">Bowler 2 Info</div>
+		
+			<div class="formtext">Enter Bowler 2 Name:
+			<input id = "b2name"type="text" class="formfield" ></div>
+		
+			<div class="formtext">Bowler 2 Score 1:
+			<input id = "b2s1" type="text" class="formfield" ></div>
+			
+					
+			<div class="formtext">Bowler 2 Score 2:
+			<input id = "b2s2" type="text" class="formfield" ></div>		
+		
+		
+			<div style="margin-top:20px;">
+				<input type="button" value="Calculate Averages" onClick = "calcScore()">
+			</div>
+		
+		</form> <!-- ends the form -->	
+		
+		<div id = "output"></div>
+		
+	</div> <!-- ends div#formwrap -->
+
+</div> <!-- ends div#pagewrap -->
+
+</body>
+</html>
+

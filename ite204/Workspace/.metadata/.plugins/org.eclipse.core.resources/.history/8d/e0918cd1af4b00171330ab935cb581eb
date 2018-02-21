@@ -1,0 +1,16 @@
+
+public class TestMoney {
+
+	public static void main(String[] args) {
+		
+		Money mikeMoney = new Money(12, 34);
+		
+		System.out.println(mikeMoney);
+		
+		mikeMoney.addMoney(new Money(50,20));
+		
+		System.out.println(mikeMoney);
+
+	}
+
+}

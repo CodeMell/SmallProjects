@@ -1,0 +1,118 @@
+<html>
+<head>
+<title></title>
+
+<script type="text/javascript">
+
+function showChar(){
+	var charvalue = document.getElementById("charmenu").value;
+	var pic = "http://newton.ncc.edu/gansonj/ite154/img/";
+	
+	//alert(charvalue); useful for troubleshooting
+	
+	switch(charvalue){
+		case "homer":
+			pic = pic + "homer.jpg"
+			break;
+		case "marge":
+			pic = pic + "marge.jpg"
+			break;
+		case "lisa":
+			pic = pic + "lisa.jpg"
+			break;
+		case "milhouse":
+			pic = pic + "milhouse.jpg"
+	}
+	/*
+	if(charvalue == "homer"){
+		pic = pic + "homer.jpg"
+	}
+	else if(charvalue == "marge"){
+		pic = pic + "marge.jpg"
+	}
+	else if(charvalue == "lisa"){
+		pic = pic + "lisa.jpg"
+	}
+	else{
+		pic = pic + "milhouse.jpg"
+	}
+	*/
+	document.getElementById("picframe").src = pic;
+	
+}
+
+
+</script>
+
+
+<style type="text/css">
+
+body {
+	background-color: #454F8C;
+	font-family: arial;
+	color: #454F8C;
+}
+
+#contentwrap {
+	background: #F4F5E7;
+	border: 8px #FF9E01 solid;
+	padding: 20px;
+	width: 600px;
+	height: 600px;
+	margin: 20px auto 0px auto;
+	border-radius: 25px;
+	text-align: center;
+}
+
+#heading {
+	font-size: 2.2em;
+	border-bottom: 6px #484452 double;
+	padding: 10px 0px 10px 0px;
+	margin-bottom: 15px;
+}
+
+#formtext {
+	font-size: 1.29em;
+	margin-top: 20px;
+}
+
+</style>
+
+</head>
+
+
+<body id="bodystyle">
+
+
+<div id="contentwrap">
+
+	
+	<div id="heading">Select a Simpsons Picture</div>
+	<form>
+		<select id = "charmenu" onchange = "showChar()">
+			<option value = "homer">Homer</option>
+			<option value = "marge">Marge</option>
+			<option value = "lisa">Lisa</option>
+			<option value = "milhouse">Milhouse</option>
+		</select>
+	</form>
+	
+	<div>
+		<img id = "picframe">
+	</div>
+	
+	
+
+</div> <!-- ends div#contentwrap -->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

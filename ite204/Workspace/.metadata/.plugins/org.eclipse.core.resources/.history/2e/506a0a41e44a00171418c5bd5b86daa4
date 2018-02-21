@@ -1,0 +1,46 @@
+import javax.swing.*;
+
+public class MockLogin {
+	
+	public static void main(String[] args){
+		
+		String[] usernames = {"Jeff", "Steven", "Bill", "Stan", "Ford"};
+		String[] passwords = {"password", "fido", "1969", "floyd", "dipper"};
+		int[] numlogs = {0, 0, 0, 0, 0};
+		
+		String input = showMenu();
+		
+		
+		while(!input.equals("q")){
+			
+			if(input.equals("l")){
+				
+				input = JOptionPane.showInputDialog("Enter Username:");
+				
+				for(int i = 0; i < usernames.length; i++){
+					
+					if(input.equals(usernames[i])){
+						
+						input = JOptionPane.showInputDialog("Enter Password:");
+						
+						if(input.equals(passwords[i])){
+							
+							numlogs[i]++;
+							JOptionPane.showMessageDialog(null, "You are logged in!\n" + "Total logins is: " + numlogs[i]);
+							break;
+						}else{
+							JOptionPane.showMessageDialog(null, "Incorrect Login, try again.");
+							break;
+						}
+					}
+				}
+				
+			}
+			input = showMenu();
+		}
+	}
+	
+	public static String showMenu(){
+		return JOptionPane.showInputDialog("Select an option:\n\n(l)ogin\n(q)uit");
+	}
+}

@@ -1,0 +1,65 @@
+
+public class Money {
+	
+	private int dollars;
+	private int cents;
+	
+	public Money(int d, int c){
+		this.dollars = d;
+		this.cents = c;
+	}
+	
+	public Money(){
+		this.dollars = 0;
+		this.cents = 0;
+	}
+	
+	public int getDollars(){
+		return this.dollars;
+	}
+	
+	public int getCents(){
+		return this.cents;
+	}
+	
+	public Money addMoney(Money m){
+		Money total = new Money(this.dollars + m.getDollars(), this.cents + m.getCents());
+		
+		if(total.cents >= 100){
+			total.dollars++;
+			total.cents -= 100;
+		}
+		
+		return total;
+	}
+	
+	public Money subMoney(Money m){
+		Money total = new Money(this.dollars - m.getDollars(), this.cents - m.getCents());
+		
+		if(total.cents < 0){	
+			total.dollars--;
+			total.cents += 100;
+		}
+		
+		return total;
+	}
+	
+	public int compare(Money m){
+		if(this.dollars > m.getDollars()){
+			return 1;
+		}else if(this.dollars < m.getDollars()){
+			return -1;
+		}else if(this.cents > m.getCents()){
+			return 1;
+		}else if(this.cents < m.getCents()){
+			return -1;
+		}else{
+			return 0;
+		}
+	}
+	
+	
+	public String toString(){
+		return "$" + this.dollars + "." + this.cents;
+	}
+}

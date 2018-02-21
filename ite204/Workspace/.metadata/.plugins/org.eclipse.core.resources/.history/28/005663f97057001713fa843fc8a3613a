@@ -1,0 +1,42 @@
+
+public abstract class CreditCard {
+	
+	private String idnum;
+	private Money balance;
+	
+	public CreditCard(String idnum, Money balance){
+		this.idnum = idnum;
+		this.balance = balance;
+	}
+	
+	public CreditCard(){
+		this("00000", new Money("$0.00"));
+	}
+	
+	public String getIDnum(){
+		return this.idnum;
+	}
+	
+	public Money getBalance(){
+		return this.balance;
+	}
+	
+	public void setBalance(Money newBalance){
+		this.balance = newBalance;
+	}
+	
+	public boolean payCard(Money payamt){
+		if(payamt.compare(this.balance) <= 0){
+			this.balance = this.balance.subMoney(payamt);
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public abstract void chargeCard();
+	
+	public String toString(){
+		return "Card: " + 
+	}
+}

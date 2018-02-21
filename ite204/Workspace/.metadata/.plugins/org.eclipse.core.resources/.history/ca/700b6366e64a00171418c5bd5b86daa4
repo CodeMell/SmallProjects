@@ -1,0 +1,33 @@
+package day06;
+
+public class BankAccount {
+	
+	private String acctnum;
+	private double balance;
+	
+	public BankAccount(String a, double b){
+		
+		this.acctnum = a;
+		this.balance = b;
+	}
+	
+	public BankAccount(){
+		
+		this.acctnum = "12345";
+		this.balance = 0.0;
+	}
+	
+	public String getAccountNum(){
+		return this.acctnum;
+	}
+	
+	public double getBalance(){
+		return this.balance;
+	}
+	
+	public String toString(){
+		return "Account " + this.acctnum + "has a balance of $" + this.balance;
+	}
+	
+	
+}

@@ -1,0 +1,77 @@
+<html>
+<head>
+<title></title>
+
+<script type="text/javascript">
+
+
+function printNums(){
+	var endnum = document.getElementById("endnum").value;
+	var msg = "<div>Here are the numbers:</div>"
+	
+	for(var i = 1; i <= endnum; i++){
+		msg = msg + "<div>" + i + "</div>";
+	}
+	
+	document.getElementById("output").innerHTML = msg;
+	
+} // ends printNums() function
+
+</script>
+
+<style type="text/css">
+
+body {
+	background-color: darkred;
+	font-family: arial;
+	color: darkblue;
+	font-weight: bold;
+}
+
+#contentwrap {
+	background-color: #FFFFFF;
+	border: 6px darkblue solid;
+	padding: 20px;
+	width: 600px;
+	margin: 20px auto 0px auto;
+}
+
+#heading {
+	text-align: center;
+	font-size: 2em;
+	border-bottom: 6px darkblue double;
+	margin-bottom: 25px;
+}
+
+#formtext {
+	margin-top:10px;
+	margin-bottom:2px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="contentwrap">
+
+	<div id="heading">Gettin' loopy with loops</div>
+
+	<form>
+
+		<div id="formtext">Enter startnum</div>
+		<input type="text" id="endnum" size="20">
+
+		<div style="margin-top:10px;">
+			<input type="button" value="Print Nums" onClick="printNums()">
+
+		</div>
+		
+	</form>
+
+	<div id="output"></div>
+
+</div> <!-- end contentwrap -->
+
+</body>
+</html>

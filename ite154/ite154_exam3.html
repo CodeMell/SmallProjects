@@ -1,0 +1,111 @@
+<html>
+<head>
+
+<title>ITE154 Exam #3</title>
+
+<script type="text/javascript">
+function examFunction(){	var i = parseInt(document.getElementById("startnum").value);	var endnum1 = parseInt(document.getElementById("endnum1").value);	var endnum2 = parseInt(document.getElementById("endnum2").value);	var diviscount = 0;	var msg = "";		if(endnum1 > endnum2){		var end = endnum1;	}else{		var end = endnum2;	}		for(i; i <= end; i++){		if((i % 5) == 0){			msg += "<div>Hey Now!!</div>";		}else{			msg += "<div>" + i + "</div>";		}		if((i % 3) == 0){			diviscount++;		}	}		msg += "<div>Amount of numbers divisible by 3 is " + diviscount + "</div>";	document.getElementById("output").innerHTML = msg;}
+</script>
+
+<style type="text/css">
+
+body {
+	background: black;
+	background-image: url("http://newton.ncc.edu/gansonj/ite154/img/stars.jpg");
+	color: white;
+	font-family: arial;
+	text-align: center;
+	font-weight: bold;
+}
+
+#contentwrap {
+	background-image: url("http://newton.ncc.edu/gansonj/ite154/img/nebula.jpg");
+	background-color: #000000;
+	background-repeat: no-repeat;
+	background-position: right;
+	width: 600px;
+	min-height: 400px;
+	margin: 20px auto 20px auto;
+	border: 2px orange solid;
+	border-radius: 15px;
+}
+
+#formwrap {
+	background: lightyellow;
+	color: darkblue;
+	margin: 30px;
+	font-size: 1em;
+	padding: 10px;
+	border-radius: 15px;
+	border: 4px solid darkblue;
+	opacity:0.8;
+}
+
+#titlewrap {
+	color: darkred;
+	margin-bottom: 20px;
+	font-size: 1.75em;
+}
+
+#results {
+	background: lightblue;
+	color: darkred;
+	padding: 10px;
+	border-radius: 15px;
+	border: 4px solid darkred;
+	opacity: 1.0;
+	font-size: .95em;
+}
+
+input {
+	font-weight: bold;
+	font-size: 1em;
+	padding: 2px 5px 2px 5px;
+	border: 1px solid darkred;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div id="contentwrap">
+
+	<div id="formwrap">
+	
+		<div id="titlewrap">
+			ITE 154 Exam #3
+		</div>
+
+		<form>
+		
+			<div>Enter Start Num</div>
+			<input type="text" size="20" id="startnum">
+			<p />
+
+			<div>Enter First Ending Num</div>
+			<input type="text" size="20" id="endnum1">
+			<p />
+			
+			<div>Enter Second Ending Num</div>
+			<input type="text" size="20" id="endnum2">
+			
+			<div style="margin-top:10px;">
+				<input type="button" value="Click Me" onClick="examFunction()">
+			</div>
+			
+		</form>
+		
+		<div id="resultswrap">
+		
+			<div id="output"></div>
+		
+		</div>
+
+	</div> <!-- closes formwrap div -->
+
+</div> <!-- closes pagewrap div -->
+
+</body>
+</html>

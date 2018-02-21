@@ -1,0 +1,26 @@
+package day05;
+
+public class TestCircle {
+
+	public static void main(String[] args) {
+		
+		Circle mycircle = new Circle(9.8, "orange");
+		Circle yourcircle = new Circle(6.78, "purple");
+		
+		System.out.println("Area of mycircle is " + mycircle.findArea());
+		
+		System.out.println("Color of yourcircle is " + yourcircle.color);
+		
+		if( mycircle.findArea() > yourcircle.findArea()){
+			String msg = "mycircle is bigger"; 
+		}else if( mycircle.findArea() > yourcircle.findArea()){
+			String msg = "yourcircle is bigger";
+		}else{
+			String msg = "they are equal";
+		}
+		
+		System.out.println(msg);
+
+	}
+
+}

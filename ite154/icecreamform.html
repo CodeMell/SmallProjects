@@ -1,0 +1,95 @@
+<html>
+<head>
+<title></title>
+
+<style type = "text/css">
+
+	body{
+		font-family : comic sans ms;
+		text-align : center;
+		color : darkred;
+		background-image : url("http://newton.ncc.edu/gansonj/ite154/img/ice_cream_bkg.jpg");
+	}
+	
+	#mainwrap{
+		border : 6px darkblue solid;
+		border-radius : 25px;
+		background-image : url("http://newton.ncc.edu/gansonj/ite154/img/rainbow.png");
+		padding : 30px;
+		width : 700px;
+		margin : 35px auto 0px auto;
+	}
+	
+	#heading{
+		font-size : 2em;
+	}
+	
+	#formwrap{
+		background-color : white;
+		border : 6px blue double;
+		border-radius : 25px;
+		padding : 20px;
+	}
+	
+	.formfield{
+		background-color : orange;
+		color : green;
+		border : 4px green double;
+		width : 150px;
+		font-weight : bold;
+		padding : 3px;
+		text-align : center;
+	}
+	
+	.formtext{
+		margin-top : 8px;
+	}
+	
+	#mybutton{
+		background-color : red;
+		color : yellow;
+		padding : 2px;
+		margin-top : 8px;
+		cursor : pointer;
+	}
+	
+	
+</style>
+</head>
+
+<body>
+
+	<div id = "mainwrap">
+		<div id = "heading">
+			Ice Cream Online Order Form
+		</div>
+		
+		<div id = "formwrap">
+			<form>
+				<div class = "formtext">Enter Flavor</div>
+				<input class = "formfield" type = "text">
+				
+				<div class = "formtext">Select Size</div>
+				<select class = "formfield">
+					<option>Small</option>
+					<option>Medium</option>
+					<option>Large</option>
+					<option>Collosal</option>
+					<option>Child</option>
+				</select>
+				
+				<div class = "formtext">Choose Toppings</div>
+				<div><input class = "formfield" type = "checkbox"> Sprinkles</div>
+				<div><input class = "formfield" type = "checkbox"> Hot Fudge</div>
+				
+				<div>
+					<input id = "mybutton" type = "button" value = "Place Order">
+				</div>
+				
+			</form>
+		</div>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+package hw10;
+
+public class TestHouse {
+
+	public static void main(String[] args) {
+		
+		House[] houses = new House[3];
+
+	}
+
+}

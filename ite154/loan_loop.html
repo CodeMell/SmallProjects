@@ -1,0 +1,101 @@
+<html>
+<head>
+<title></title>
+
+<script type="text/javascript">
+
+function calcLoan(){
+    var loanamt = parseFloat(document.getElementById("loanamt").value);
+    var payamt = parseFloat(document.getElementById("payamt").value);
+    var months = 0;
+    var totalpaid = 0;
+    
+    while(loanamt > 0){
+        if(payamt > loanamt){
+            payamt = loanamt;
+        }
+        loanamt = loanamt - payamt;
+        totalpaid = totalpaid + payamt;
+        months++;
+    }
+    
+    document.getElementById("output").innerHTML = "<div>Total monthly payments is " + months + " months</div><div>Total amount paid is $" + totalpaid.toFixed(2) + "</div>";
+}
+
+
+</script>
+
+<style type="text/css">
+
+body {
+	background-color: #F3EFE0;
+	font-family: arial;
+	color: #217C7E;
+	text-align: center;
+}
+
+#contentwrap {
+	border: 8px #9A3334 solid;
+	padding: 20px;
+	width: 600px;
+	margin: 20px auto 0px auto;
+	border-radius: 25px;
+	background: white;
+}
+
+#heading {
+	font-size: 2em;
+	border-bottom: 6px #217C7E double;
+	padding: 10px 0px 10px 0px;
+	color: darkred;
+}
+
+.formtext {
+	font-size: 1.29em;
+	margin-top: 15px;
+}
+
+.formfield {
+	background-color: lightgray;
+	border: 2px darkred solid;
+	padding: 5px;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+#output {
+	font-size: 1.6em;
+	color: #FF0000;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="contentwrap">
+
+	<div id="heading">Loan Payment Program</div>
+
+	<div>
+
+		<form>
+			<div class="formtext">Enter Loan Amount</div>
+			<input type="text" class="formfield" id="loanamt" />
+		
+			<div class="formtext">Enter Monthly Payment Amount</div>
+			<input type="text" class="formfield" id="payamt" />
+
+			<div style="margin-top:10px;">
+				<input type="button"  class="formfield" value="Do It To It!" onClick="calcLoan()" />
+			</div>
+		</form>
+
+		<div id="output"></div>
+
+	</div>
+
+</div> <!-- ends div#contentwrap -->
+
+</body>
+</html>

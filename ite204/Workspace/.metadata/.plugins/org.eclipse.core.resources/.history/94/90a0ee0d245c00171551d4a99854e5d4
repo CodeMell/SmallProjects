@@ -1,0 +1,12 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class ButtonDemo extends JFrame {
+
+	public static void main(String[] args) {
+		
+		ButtonDemo myframe = new ButtonDemo();
+		myframe.setSize(300, 350);
+	}
+
+}

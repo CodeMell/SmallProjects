@@ -1,0 +1,14 @@
+package day05;
+
+public class TestCircle {
+
+	public static void main(String[] args) {
+		
+		Circle mycircle = new Circle(9.8, "orange");
+		Circle yourcircle = new Circle(6.78, "purple");
+		
+		
+
+	}
+
+}

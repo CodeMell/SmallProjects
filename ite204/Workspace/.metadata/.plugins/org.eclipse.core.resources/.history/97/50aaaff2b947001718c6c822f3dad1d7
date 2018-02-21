@@ -1,0 +1,25 @@
+package day04;
+import javax.swing.*;
+
+public class PurchaseArray {
+	public static void main(String[] args){
+		String[] products = {"RAM", "Graphics Card", "Hard Drive", "Mouse"};
+		double[] prices = {89.99, 249.99, 199.99, 1200.99};
+		int[] quantity = {45, 9, 50, 200};
+		
+		int menuChoice = showMenu(products, prices);
+		
+	}
+	
+	public static int showMenu(String[] products, double[] prices){
+		
+		String msg = "Please Choose an option:\n\n";
+		msg += "-2 to quit\n -1 to show inventory\n\n";
+		
+		for(int i = 0; i < products.length; i++){
+			msg += i + " " + products[i] + " " + prices[i] + "\n";
+		}
+		
+		return Integer.parseInt(JOptionPane.showInputDialog(msg));
+	}
+}

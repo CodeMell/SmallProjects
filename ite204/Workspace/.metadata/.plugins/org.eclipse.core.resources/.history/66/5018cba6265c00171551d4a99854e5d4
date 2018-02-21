@@ -1,0 +1,27 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class ButtonDemo extends JFrame {
+
+	public static void main(String[] args) {
+		
+		ButtonDemo myframe = new ButtonDemo();
+		myframe.setSize(300, 350);
+		myframe.setTitle("BUTTONS");
+		myframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		myframe.setLocationRelativeTo(null);
+		myframe.setResizable(true);
+		myframe.setVisible(true);
+	}
+	
+	public ButtonDemo(){
+		
+		Container c = this.getContentPane();
+		c.setLayout(new FlowLayout());
+		
+		JLabel title = new JLabel("Click a Button");
+		c.add(title);
+		c.setBackground("green");
+	}
+
+}

@@ -1,0 +1,90 @@
+<html>
+<head>
+<title></title>
+
+<script type="text/javascript">
+
+function listSalary(){
+
+	var salary = parseFloat(document.getElementById("salary").value);
+	var years = parseInt(document.getElementById("years").value);
+	var increase = parseFloat(document.getElementById("increase").value);
+	var msg = "";
+	
+	for( var i = 1; i <= years; i++ ){
+	
+		msg += "<div>Year " + i + ": $" + salary.toFixed(2) + "</div>";
+		salary = (salary + (salary * (increase / 100)));
+	
+	}
+	document.getElementById("output").innerHTML = msg;
+}
+
+
+</script>
+
+<style type="text/css">
+
+body {
+
+	color: darkred;
+	font-family: verdana;
+	background-image: url("http://newton.ncc.edu/gansonj/ite154/img/money.jpg");
+}
+
+#title {
+	font-size: 1.5em;
+	margin-bottom: 40px;
+}
+
+#pagewrap {
+	background: lightyellow;
+	border:6px darkgreen double;
+	padding: 25px;
+	width: 500px;
+	margin: 15px auto 0px auto;
+}
+
+.formtext {
+	margin-top: 10px;
+}
+
+input {
+	font-weight: bold;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="pagewrap">
+
+	<div id="title">
+		List yearly salary with added<br />
+		% increase each year
+	</div>
+
+	<form>
+
+		<div class="formtext">Enter initial salary</div>
+		<input type="text" id="salary" size="20" />
+
+		<div class="formtext">Enter amount of years to list</div>
+		<input type="text" id="years" size="20" />
+
+		<div class="formtext">Enter percent of increase</div>
+		<input type="text" id="increase" size="20" />
+
+		<div style="margin-top: 15px;">
+			<input type="button" value="View Salary List" onClick="listSalary()" />
+		</div>
+		
+	</form>
+
+	<div id="output" style="margin-top:10px;"></div>
+
+</div> <!-- ends div#pagewrap -->
+
+</body>
+</html>

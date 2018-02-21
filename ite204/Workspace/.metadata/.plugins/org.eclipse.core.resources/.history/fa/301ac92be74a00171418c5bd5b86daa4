@@ -1,0 +1,14 @@
+package day06;
+
+public class TestBankAccount {
+
+	public static void main(String[] args) {
+		
+		BankAccount ajacct = new BankAccount("19235", 200.00);
+		BankAccount codyacct = new BankAccount("65493", 52.00);
+		
+		System.out.println(codyacct);
+
+	}
+
+}

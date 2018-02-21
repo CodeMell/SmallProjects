@@ -1,0 +1,121 @@
+<html>
+<head>
+<title></title>
+
+<script type="text/javascript">
+
+function validateForm(){
+	var username = document.getElementById("username").value;
+	var nnum = document.getElementById("nnum").value;
+	var email = document.getElementById("email").value;
+	var ssnum = document.getElementById("ssnum").value;
+	
+	var msg = "";
+	
+	if(username.length < 6 || username.length > 12){
+		msg = msg + "<div>Username is invalid.</div>";
+	}
+	if(nnum.length != 9 || nnum.charAt(0) != "N"){
+		msg = msg + "<div>N number is invalid.</div>";
+	}
+	if(email.indexOf("@") == -1 || email.charAt(email.length - 4) != "."){
+		msg = msg + "<div>Email is invalid.</div>";
+	}
+	if(ssnum.length != 11 || ssnum.charAt(3) != "-" || ssnum.charAt(6) != "-"){
+		msg = msg + "<div>Social Security number is invalid.</div>";
+	}
+	if(msg == ""){
+		msg = "<div>Input is all good!</div>";
+	}
+	
+	document.getElementById("output").innerHTML = msg;
+}
+
+</script>
+
+<style type="text/css">
+
+body {
+	background-color: #454F8C;
+	font-family: arial;
+}
+
+#contentwrap {
+	background: #F4F5E7;
+	border: 8px #FF9E01 solid;
+	padding: 20px;
+	width: 800px;
+	margin: 20px auto 0px auto;
+	border-radius: 25px;
+}
+
+#heading {
+	font-size: 2.2em;
+	border-bottom: 6px #484452 double;
+	padding: 10px 0px 10px 0px;
+	text-align: center;
+	color: #454F8C;
+}
+
+.formtext {
+	margin-top: 15px;
+	color: darkgreen;
+	font-weight: bold;
+}
+
+.formfield {
+	background-color: lightblue;
+	border: 2px blue solid;
+	width: 250px;
+}
+
+.errorspan {
+	color: red;
+}
+
+#results {
+	font-size: 1.25em;
+	color: darkgreen;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="contentwrap">
+
+	<div id="heading">Enter your information</div>
+	
+	<div>
+		<form>
+			
+			<div class="formtext">Enter Username</div>
+			<input type="text" id="username" class="formfield" />
+
+			<div class="formtext">Enter NCC Number</div>
+			<input type="text" id="nnum" class="formfield" />
+			
+			<div class="formtext">Enter Email</div>
+			<input type="text" id="email" class="formfield" />
+			
+			<div class="formtext">Enter  Social Security Number</div>
+			<input type="text" id="ssnum" class="formfield" />
+
+			<div style="margin-top:15px;">
+				<input type="button" value="Process Form" onClick="validateForm()" />
+			</div>
+	
+		</form>
+	</div>
+	
+	<div id="output"></div>
+	
+</div> <!-- ends div#contentwrap -->
+
+</body>
+</html>
+
+
+
+

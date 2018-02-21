@@ -1,0 +1,100 @@
+<html>
+<head>
+<title></title>
+
+<script type="text/javascript">
+
+function calcAvg(){
+	var numgrades = parseInt(document.getElementById("numgrades").value);
+	var total = 0;
+	var tempgrade;
+	
+	for(var i = 1; i <= numgrades; i++){
+		tempgrade = parseInt(prompt("Enter grade " + i));
+		
+		while(tempgrade > 100 || tempgrade < 0 || isNaN(tempgrade)){
+			tempgrade = parseInt(prompt("Invalid input:\nEnter grade " + i + " again"));
+		}
+		
+		total += tempgrade;
+	}
+	
+	var average = total / numgrades;
+	
+	document.getElementById("output").innerHTML = "<div>The average is " + average + "</div>";
+}
+
+
+</script>
+
+
+<style type="text/css">
+
+body {
+	background-color: #F3EFE0;
+	font-family: arial;
+	color: #217C7E;
+}
+
+#contentwrap {
+	border: 8px #9A3334 solid;
+	padding: 20px;
+	width: 600px;
+	margin: 20px auto 0px auto;
+	border-radius: 25px;
+	text-align: center;
+	background: white;
+}
+
+#heading {
+	font-size: 2.2em;
+	border-bottom: 6px #217C7E double;
+	padding: 10px 0px 10px 0px;
+	color: darkred;
+}
+
+#formdiv {
+	text-align: center;
+	height: 300px;
+	padding-top: 25px;
+}
+
+#formtext {
+	text-align: center;
+	font-size: 1.29em;
+	margin-top: 20px;
+}
+
+#numgrades {
+	background-color: lightgray;
+	border: 2px darkred solid;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="contentwrap">
+
+	<div id="heading">Calculate Grades</div>
+
+	<div id="formdiv">
+
+		<form>
+	
+			<div id="formtext">Enter number of grades</div>
+			<input type="text" id="numgrades" size="30" /><p />
+	
+			<input type="button" value="Enter Grades" onClick="calcAvg()" />
+		
+		</form>
+
+		<div id="output"></div>
+	
+	</div> <!-- ends div#formdiv -->
+
+</div> <!-- ends div#contentwrap -->
+
+</body>
+</html>
